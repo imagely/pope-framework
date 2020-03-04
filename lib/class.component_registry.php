@@ -57,7 +57,9 @@ class C_Component_Registry
 		static $already_required = array();
 		$relpath = basename($module_file_abspath);
 		if (!in_array($relpath, $already_required)) {
-			@require_once($module_file_abspath);
+            ini_set('track_errors', true);
+            @require_once($module_file_abspath);
+            if (isset($php_errormsg) && defined('NGG_DEBUG') && constant('NGG_DEBUG')) error_log($php_errormsg);
 			$already_required[] = $relpath;
 		}
 	}
