@@ -789,7 +789,7 @@ class C_Component_Registry
 	{
 		$retval = array();
 		static $recursive_level = 0;
-        static $exclusions = array('..', '.', 'error_log', 'README', 'CHANGELOG', 'readme.txt', 'changelog.txt');
+        static $exclusions = array('..', '.', 'error_log', 'README', 'CHANGELOG', 'readme.txt', 'changelog.txt', 'LICENSE');
 		$recursive_level++;
 
 		$abspath = str_replace(array('\\', '/'), DIRECTORY_SEPARATOR, $abspath);
